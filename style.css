@@ -106,11 +106,46 @@ section {
     width: 100%;
 }
 
+/* ADD PARALLAX EFFECT */
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8rem;
+    position: relative;
+    background: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/bg-home.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.home::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(8, 8, 8, 0.9) 0%,
+        rgba(8, 8, 8, 0.7) 50%,
+        rgba(8, 8, 8, 0.8) 100%
+    );
+    z-index: -1;
 }
 
 .home-content {
@@ -120,6 +155,8 @@ section {
     text-align: right;
     animation-duration: 2s;
     animation-name: slide-in-left;
+    position: relative;
+    z-index: 2;
 }
 
 @keyframes slide-in-left {
@@ -179,6 +216,8 @@ section {
     transition: 0.5s ease-in-out;
     animation-duration: 2s;
     animation-name: slide-in-right;
+    position: relative;
+    z-index: 2;
 }
 
 @keyframes slide-in-right {
@@ -359,6 +398,41 @@ section {
 .projects {
     display: flex;
     flex-direction: column;
+    position: relative;
+    background: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ADD PARALLAX EFFECT */
+.projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/bg-projects.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.projects::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(8, 8, 8, 0.9) 0%,
+        rgba(8, 8, 8, 0.7) 50%,
+        rgba(8, 8, 8, 0.8) 100%
+    );
+    z-index: -1;
 }
 
 .projects-header {
@@ -378,6 +452,8 @@ section {
     justify-content: center;
     align-items: center;
     gap: 3.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .project-card {
@@ -391,6 +467,8 @@ section {
     cursor: pointer;
     position: relative;
     transition: 0.5s ease-in-out;
+    position: relative;
+    z-index: 2;
 }
 
 .project-card:hover {
